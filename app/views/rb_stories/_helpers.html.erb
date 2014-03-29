@@ -5,6 +5,10 @@
   <%- end %>
 </select>
 
+<select class="assigned_to_id helper" id="assigned_to_id_options">
+  <%= users_assignable_options_for_select(@project.assignable_users) %>
+</select>
+
 <%- unless Backlogs.setting[:story_points].blank? -%>
 <select class="story_points helper" id="story_points_options">
 	<%- (['']+Backlogs.setting[:story_points].split(/,/).collect(&:to_f)).each do |point| %>
@@ -25,6 +29,12 @@
 
 <select class="project_id helper" id="project_id_options">
   <option value="<%= @project.id %>"><%= @project.name %></option>
+</select>
+
+<select class="priority_id helper" id="priority_id_options">
+  <%- IssuePriority.all.each do |p| %>
+      <option value="<%= p.id %>"><%= h p.name %></option>
+  <%- end %>
 </select>
 
 <div id="story_template">

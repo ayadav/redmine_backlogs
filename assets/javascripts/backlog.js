@@ -55,6 +55,8 @@ RB.Backlog = RB.Object.create({
     });
     
     this.recalcVelocity();
+
+    RB.$(".header", el).click(function(e){$(this).next().toggle();});
   },
 
   afterCreate: function(data, textStatus, xhr){

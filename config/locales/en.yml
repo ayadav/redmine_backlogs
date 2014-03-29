@@ -96,6 +96,7 @@ en:
   field_position: Position
   field_priority: Priority
   field_project_id: "Project Id"
+  field_author_id: "Author Id"
   field_release: Release
   field_release_ids: Releases
   field_release_end_date: "Release end date"

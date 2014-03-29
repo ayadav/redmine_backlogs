@@ -47,18 +47,18 @@
   width: 100%;
 }
 .fff-middle{
-  margin-right:112px;
-  margin-left:110px;
+  margin-right:160px;
+  margin-left:154px;
 }
 .fff-left{
   float: left;
-  width: 110px;
+  width: 154px;
   margin-left: -100%;
 }
 .fff-right{
   float: left;
-  width: 112px;
-  margin-left: -112px;
+  width: 160px;
+  margin-left: -160px;
 }
 
 .header .fff-middle{
@@ -254,6 +254,7 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
   display:block;
   position: relative;
   height:30px;
+  cursor: pointer;
 }
 #backlogs_container .header .model.headertext{
   cursor:pointer;
@@ -290,6 +291,8 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
   font-size:12px;
 }
 
+
+
 /* backlog header*/
 #backlogs_container .header .name {
   padding-left: 8px;
@@ -308,6 +311,16 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
 #backlogs_container .header .velocity {
   text-align: right;
   padding-right: 2px;
+}
+
+#backlogs_container .header .edit_link {
+    color: #CC0000;
+    float: left;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    margin-left: 5px;
+    cursor: pointer;
 }
 
 /* backlog header invisibles */
@@ -349,9 +362,7 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
 #backlogs_container .stories .story:hover {
   background-color:rgb(254,248,168);
 }
-#backlogs_container .stories .story .tracker_id{
-  display:none;
-}
+
 #backlogs_container .stories .story .id{
   position:relative;
   width:55px;
@@ -410,6 +421,13 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
   display:none;
 }
 
+#backlogs_container .stories .story .tracker_id{
+    width:40px;
+    float: left;
+    padding-left:2px;
+    white-space: nowrap;
+}
+
 #backlogs_container .stories .story .subject {
   overflow:hidden;
   white-space:nowrap;
@@ -417,8 +435,20 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
 #backlogs_container .stories .story.closed .subject{
   text-decoration:line-through;
 }
+
+#backlogs_container .stories .story .priority_id {
+    display:none;
+}
+
+#backlogs_container .stories .story .assigned_to {
+    width:60px;
+    float: left;
+    padding-left:8px;
+    white-space: nowrap;
+}
+
 #backlogs_container .stories .story .status_id {
-  width:68px;
+  width:60px;
   float: left;
   padding-left:8px;
   white-space: nowrap;
@@ -427,7 +457,7 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
 #backlogs_container .stories .story .story_points {
   text-align:right;
   float: left;
-  width:34px;
+  width:20px;
 }
 /*meta in story*/
 #backlogs_container .stories .story .fixed_version_id,
@@ -527,40 +557,49 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
 /* In-place Story Editor */
 #backlogs_container .stories .story.editing .editors{
   display:block;
+  padding-left: 2px;
 }
 #backlogs_container .stories .story.editing .editors label{
   display:none;
 }
+#backlogs_container .stories .story.editing .editors label{
+    display:none;
+}
 #backlogs_container .stories .story.editing .editor{
   display: block;
   font-family:Verdana, Arial, sans-serif;
+  margin:10px 10px 10px 0;
 }
 #backlogs_container .stories .story.editing .tracker_id.editor{
   display:block;
-  margin:0;
-  max-width:80px;
+  /* margin:0; */
+  max-width:100px;
+  width: 100px;
   float: left;
+}
+#backlogs_container .stories .story.editing .priority_id.editor {
+    display:none;
 }
 #backlogs_container .stories .story.editing .subject.editor{
   font-size: 11px;
-  margin:0;
+  /* margin:0; */
   padding: 4px 4px 4px 4px;
 }
 #backlogs_container .stories .story.editing .status_id{
-  margin:0;
-  width:76px;
+  /* margin:0; */
+  width:120px;
 }
 #backlogs_container .stories .story.editing select.story_points.editor {
-  margin:0;
+  /* margin:0; */
   padding: 0px;
   height: inherit;
-  width: 40px;
+  width: 60px;
   overflow: visible;
 }
 #backlogs_container .stories .story.editing input.story_points.editor {
   display:block;
   height:10px;
-  margin:0;
+  /* margin:0; */
   float: right;
 }
 #backlogs_container .stories .story.editing .subject.editor {

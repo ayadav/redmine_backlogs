@@ -1,11 +1,22 @@
 <li class="model story fff-wrapper <%= mark_if_closed(story) %> tracker<%= story ? story.tracker_id : '' %>" id="<%= story_html_id_or_empty(story) %>">
  <div class="fff-wrapmiddle">
-  <div class="subject editable story_field fff-middle" fieldname="subject" fieldlabel="<%=l(:field_subject)%>" fieldtype="textarea"><%=h story.subject %>
-  </div>
+      <div class="subject editable story_field fff-middle" fieldname="subject" fieldlabel="<%=l(:field_subject)%>" fieldtype="textarea"><%=h story.subject %>
+      </div>
  </div>
  <div class="fff-left">
     <% qtip_cls = "story_tooltip"
        qtip_cls = "story_tooltip_ajax" unless defined?(render_tooltip)  %>
+
+   <div class="tracker_id editable story_field" fieldtype="select" fieldname="tracker_id" fieldlabel="<%=l(:field_tracker_id)%>">
+     <div class="t"><%= h tracker_name_or_empty(story) %></div>
+     <div class="v"><%= tracker_id_or_empty(story) %></div>
+   </div>
+
+   <div class="priority_id editable story_field" fieldtype="select" fieldname="priority_id" fieldlabel="<%=l(:field_priority_id)%>">
+     <div class="t"><%= story.priority %></div>
+     <div class="v"><%= story.priority_id %></div>
+   </div>
+
   <div class="id <%= qtip_cls %> story_field">
     <div class="tooltip_text"><%= render :partial => "rb_stories/tooltip", :object => story if defined?(render_tooltip) %></div>
     <div class="t"><%= issue_link_or_empty(story) %></div>
@@ -17,12 +28,14 @@
     <div class="v"><%= story.project_id %></div>
   </div>
 
-  <div class="tracker_id editable story_field" fieldtype="select" fieldname="tracker_id" fieldlabel="<%=l(:field_tracker_id)%>">
-    <div class="t"><%= h tracker_name_or_empty(story) %></div>
-    <div class="v"><%= tracker_id_or_empty(story) %></div>
-  </div>
  </div>
  <div class="fff-right">
+
+   <div class="assigned_to editable story_field" fieldtype="select" fieldname="assigned_to_id" fieldlabel="<%=l(:field_assigned_to_id)%>">
+     <div class="t"><%= story.assigned_to %></div>
+     <div class="v"><%= story.assigned_to_id %></div>
+   </div>
+
   <div class="status_id editable story_field" fieldtype="select" fieldname="status_id" fieldlabel="<%=l(:field_status_id)%>">
     <div class="t"><%= status_label_or_default(story) %></div>
     <div class="v"><%= status_id_or_default(story) %></div>
