@@ -1,4 +1,5 @@
-<% if sprints && sprints.size > 0 %>
+<% if  false %>
+ <% if sprints && sprints.size > 0 %>
   <h3><%= l(:backlogs_sprints) %></h3>
   <% sprints.each do |sp| %>
     <%= link_to(sp.name, {
@@ -48,6 +49,8 @@
     <% } %>
   <% end %><%# if releases && %>
 <% end %><%# if project %>
+
+<% end %>
 
 <% if sprint %>
   <h3><%= l(:label_sprint_name, {:name => sprint.name}) %></h3>

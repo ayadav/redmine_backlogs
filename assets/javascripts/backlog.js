@@ -56,7 +56,6 @@ RB.Backlog = RB.Object.create({
     
     this.recalcVelocity();
 
-    RB.$(".header", el).click(function(e){$(this).next().toggle();});
   },
 
   afterCreate: function(data, textStatus, xhr){
@@ -69,6 +68,8 @@ RB.Backlog = RB.Object.create({
 
   drawMenu: function()
   {
+    this.$.find(".fff-middle").click(function(e){$(this).parents(".header").next().toggle();});
+
     var menu = this.$.find('ul.items');
     var id = null;
     var self = this;
