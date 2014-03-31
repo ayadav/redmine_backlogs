@@ -123,6 +123,7 @@
               <span class="v"><%= story.project.id %></span>
             </div>
           <%- end %>
+          <div class="hours">Spent <b><%= story.total_spent_hours.round(2) %></b> of <b><%= story.estimated_hours.to_i %></b> <%= l(:label_hours) %></div>
           <div class="story_points editable" fieldname="story_points" fieldlabel="<%=l(:field_story_points)%>"><%= story.story_points %></div>
         </div>
       </td>

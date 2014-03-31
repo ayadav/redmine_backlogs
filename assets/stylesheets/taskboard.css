@@ -112,7 +112,7 @@ See RB.Taskboard.initialize()
   display:block;
   float:left;
   font-size:10px;
-  min-height:80px;
+  min-height:70px;
   margin:5px;
   padding:5px;
   position:relative;
@@ -138,12 +138,18 @@ See RB.Taskboard.initialize()
   font-weight: bold;
 }
 .story .subject{
-  height:63px;
+  height:53px;
   line-height:13px;
   margin-top:0;
   overflow:hidden;
   padding:2px;
   width:186px;
+}
+.story .hours{
+    background-color: #FF8800;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 1px;
 }
 .story .project {
   text-align:left;
